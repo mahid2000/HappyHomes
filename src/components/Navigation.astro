@@ -1,0 +1,68 @@
+---
+const pages = [
+  { name: "Home", url: "/" },
+  { name: "About", url: "/about" },
+  { name: "Content", url: "/content" },
+];
+---
+
+<header class="bg-orange-500 text-white shadow-md" client:load>
+  <div class="mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <a href="/" class="text-blue-100 font-bold text-lg">
+      Happy Homes Community
+    </a>
+
+    <img src="/images/happyhomesorangeplainlogo.jpg" alt="Happy Homes Logo" class="h-16 w-auto items-center" />
+
+    <nav class="hidden md:flex space-x-6 text-sm">
+      {pages.map((page) => (
+        <a
+          href={page.url}
+          class="text-white hover:text-blue-200 transition font-medium"
+        >
+          {page.name}
+        </a>
+      ))}
+    </nav>
+
+    <button
+      data-nav-toggle
+      class="block md:hidden p-2 text-white hover:text-blue-200 transition"
+      aria-label="Toggle navigation menu"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <nav class="md:hidden hidden flex-col gap-2 px-4 pb-4 bg-orange-400" data-nav-menu>
+    {pages.map((page) => (
+      <a
+        href={page.url}
+        class="block py-1 text-white hover:text-blue-200 font-medium transition"
+      >
+        {page.name}
+      </a>
+    ))}
+  </nav>
+
+  <!-- ✅ Inline client script to toggle nav -->
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.querySelector('[data-nav-toggle]');
+      const menu = document.querySelector('[data-nav-menu]');
+      if (toggleBtn && menu) {
+        toggleBtn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+        });
+      }
+    });
+  </script>
+</header>

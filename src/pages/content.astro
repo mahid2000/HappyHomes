@@ -1,0 +1,126 @@
+---
+const pageTitle = "Content";
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<html lang="en">
+<head>
+
+    <Navigation client:load />
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{pageTitle}</title>
+</head>
+<body>
+
+
+
+  <div class="container mx-auto px-4">
+    <h1 class="text-3xl font-bold mb-2">Our Blog</h1>
+    <p class="mb-8">This is where we will post our articles.</p>
+
+    <!-- Cards Section -->
+    <div class="flex flex-wrap gap-6">
+      
+      <!-- Article 1 -->
+    <article class="bg-orange-300 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-lg shadow overflow-hidden">
+  <a href="/posts/VEDAYReport.pdf" target="_blank">
+    <img
+      alt="Article 1"
+      src="/images/VEDayRep2025.JPG"
+      class="h-64 w-full object-cover sm:h-80 lg:h-96"
+    />
+  </a>
+  <div class="p-4">
+    <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
+      <a href="/posts/VEDAYReport.pdf" target="_blank">
+        Happy Homes VE Day Report
+      </a>
+    </h3>
+    <p class="mt-2 text-gray-700">
+      Find out how we celebrated VE Day with our community and the impact of our events.
+    </p>
+  </div>
+</article>
+
+<!-- Article 2 -->
+<article class="bg-orange-300 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-lg shadow overflow-hidden">
+  <a href="/posts/annualreport.pdf" target="_blank">
+    <img
+      alt="Article 2"
+      src="/images/ReportApril2025.JPG"
+      class="h-64 w-full object-cover sm:h-80 lg:h-96"
+    />
+  </a>
+  <div class="p-4">
+    <h3 class="text-lg font-bold text-gray-900 sm:text-xl">
+      <a href="/posts/annualreport.pdf" target="_blank">
+        Happy Homes Annual Report
+      </a>
+    </h3>
+    <p class="mt-2 text-gray-700">
+      View our detailed yearly report covering progress, initiatives, and community impact.
+    </p>
+  </div>
+</article>
+
+    </div>    
+  </div>
+
+  <div class="container mx-auto px-4">
+    <!-- Useful Resources Section -->
+<section class="mt-12">
+  <h2 class="text-2xl font-bold mb-4">Useful Organisations & Resources</h2>
+  <p class="mb-6 text-gray-700">
+    Below are some organisations and resources we recommend. These may be helpful for support, advice, or services related to housing, wellbeing, or community life.
+  </p>
+
+  <div class="space-y-4">
+    <!-- Resource 1 -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <a href="https://www.shelter.org.uk" target="_blank" class="text-lg font-semibold text-blue-600 hover:underline">
+        Shelter UK
+      </a>
+      <p class="text-gray-700">
+        Provides expert advice and support for housing issues and homelessness across the UK.
+      </p>
+    </div>
+
+    <!-- Resource 2 -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <a href="https://www.mind.org.uk" target="_blank" class="text-lg font-semibold text-blue-600 hover:underline">
+        Mind
+      </a>
+      <p class="text-gray-700">
+        A mental health charity offering information, advice and support to anyone experiencing a mental health problem.
+      </p>
+    </div>
+
+    <!-- Resource 3 -->
+    <div class="bg-white p-4 rounded-lg shadow">
+      <a href="https://www.citizensadvice.org.uk" target="_blank" class="text-lg font-semibold text-blue-600 hover:underline">
+        Citizens Advice
+      </a>
+      <p class="text-gray-700">
+        Free, confidential information and advice to assist people with legal, debt, consumer, housing and other problems.
+      </p>
+    </div>
+
+    <!-- Add more resources below as needed -->
+  </div>
+</section>
+
+
+  </div>
+
+
+
+
+
+  
+<Footer client:load />
+</body>
+</html>

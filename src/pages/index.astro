@@ -1,16 +1,197 @@
 ---
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 
+const pageTitle = "Happy Homes";
+
+// Local image slides for the carousel
+const slides = [
+  {
+    alt: 'Welcome to Happy Homes',
+    title: 'Welcome to Happy Homes',
+    description: 'Empowering families with care, support, and community connection.',
+  },
+  {
+    alt: 'Support That Matters',
+    title: 'Support That Matters',
+    description: 'Workshops and safe spaces for growth.',
+  },
+  {
+    alt: 'Together We Rise',
+    title: 'Together We Rise',
+    description: 'Advocating for resilient families.',
+  },
+    {
+    alt: 'Welcome to Happy Homes',
+    title: 'Welcome to Happy Homes',
+    description: 'Empowering families with care, support, and community connection.',
+  },
+  {
+    alt: 'Support That Matters',
+    title: 'Support That Matters',
+    description: 'Workshops and safe spaces for growth.',
+  },
+  {
+    alt: 'Together We Rise',
+    title: 'Together We Rise',
+    description: 'Advocating for resilient families.',
+  },
+    {
+    alt: 'Welcome to Happy Homes',
+    title: 'Welcome to Happy Homes',
+    description: 'Empowering families with care, support, and community connection.',
+  },
+  {
+    alt: 'Support That Matters',
+    title: 'Support That Matters',
+    description: 'Workshops and safe spaces for growth.',
+  },
+  {
+    alt: 'Together We Rise',
+    title: 'Together We Rise',
+    description: 'Advocating for resilient families.',
+  },
+    {
+    alt: 'Welcome to Happy Homes',
+    title: 'Welcome to Happy Homes',
+    description: 'Empowering families with care, support, and community connection.',
+  },
+  {
+    alt: 'Support That Matters',
+    title: 'Support That Matters',
+    description: 'Workshops and safe spaces for growth.',
+  },
+  {
+    alt: 'Together We Rise',
+    title: 'Together We Rise',
+    description: 'Advocating for resilient families.',
+  },
+    {
+    alt: 'Welcome to Happy Homes',
+    title: 'Welcome to Happy Homes',
+    description: 'Empowering families with care, support, and community connection.',
+  },
+  {
+    alt: 'Support That Matters',
+    title: 'Support That Matters',
+    description: 'Workshops and safe spaces for growth.',
+  },
+  {
+    alt: 'Together We Rise',
+    title: 'Together We Rise',
+    description: 'Advocating for resilient families.',
+  },
+  {
+    alt: 'Together We Rise',
+    title: 'Together We Rise',
+    description: 'Advocating for resilient families.',
+  },
+];
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body class="text-gray-800 bg-orange-50">
+    <Navigation client:load />
+
+<!-- ✅ Hero Carousel with support for images & videos -->
+<!-- ✅ Fullscreen Hero Carousel with videos -->
+ 
+<section x-data="{ current: 0, slides: $el.querySelectorAll('.slide').length }" class="relative">
+  <div class="overflow-hidden relative h-screen w-full">
+    <div
+      class="flex transition-transform duration-700 ease-in-out w-full h-full"
+      :style="`transform: translateX(-${current * 100}%);`"
+    >
+      {slides.map((slide, index) => (
+        <div class="w-full h-full flex-shrink-0 relative slide" key={index}>
+          <div class="absolute inset-0  bg-opacity-40 flex items-center justify-center text-white px-4 text-center">
+            <div>
+              <h1 class="text-4xl font-bold mb-2">{slide.title}</h1>
+              <p class="text-blue text-lg">{slide.description}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Prev Button -->
+    <button @click="current = (current - 1 + slides) % slides"
+      class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 z-10">
+      ‹
+    </button>
+
+    <!-- Next Button -->
+    <button @click="current = (current + 1) % slides"
+      class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-40 text-white p-2 rounded-full hover:bg-opacity-60 z-10">
+      ›
+    </button>
+
+    <!-- Dots -->
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+      <template x-for="i in Array.from({length: slides}).keys()" :key="i">
+        <button
+          @click="current = i"
+          :class="current === i ? 'bg-white' : 'bg-gray-400'"
+          class="w-3 h-3 rounded-full"
+        ></button>
+      </template>
+    </div>
+  </div>
+</section>
+
+
+    <!-- ✅ Mission Section -->
+    <section class="pb-4 pt-12">
+      <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h2 class="text-2xl font-semibold mb-4">Our Mission</h2>
+          <p class="text-gray-700 mb-4">
+            At Happy Homes Community, we provide families with the tools, resources, and training needed to build strong,
+            resilient homes. Through community support and advocacy, we aim to create a space where every family can feel
+            safe and empowered.
+          </p>
+          <p class="text-gray-700 mb-4">
+            Our goals include fostering independence, enhancing well-being, and promoting a sense of belonging among families facing
+            adversity. We aim to do this through workshops and forums raising awareness about socioeconomic challenges and local services available to tackle them.    
+          </p>
+        </div>
+        <img src="/images/kids-activ7.jpg" alt="Families helping each other" class="rounded-xl shadow" />
+      </div>
+    </section>
+
+    <!-- ✅ Services Section -->
+    <section class="pt-4 pb-12">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-2xl font-semibold mb-6">What We Offer</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-orange-300 p-6 rounded shadow">
+            <img src="/images/boardgames1.jpg" alt="Workshops" class="mb-4 rounded" />
+            <h3 class="font-bold mb-2">Family Workshops</h3>
+            <p>Empowering parents and children through practical skill-building and emotional support sessions.</p>
+          </div>
+          <div class="bg-orange-300 p-6 rounded shadow">
+            <img src="/images/presentation.jpg" alt="Support Groups" class="mb-4 rounded" />
+            <h3 class="font-bold mb-2">Support Groups</h3>
+            <p>Safe, welcoming spaces for families to connect, share, and grow together.</p>
+          </div>
+          <div class="bg-orange-300 p-6 rounded shadow">
+            <img src="/images/mayor.jpg" alt="Community Advocacy" class="mb-4 rounded" />
+            <h3 class="font-bold mb-2">Community Advocacy</h3>
+            <p>We champion better resources and policies for families in need, amplifying their voices in the community.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer client:load />
+  </body>
 </html>

@@ -14,7 +14,7 @@ const pageTitle = "About Us – Happy Homes";
     <title>{pageTitle}</title>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <body class="bg-blue-200 text-gray-900">
+  <body class="bg-orange-50 text-gray-900" style="background-color: #fdba74;">
 
     <Navigation client:load />
 
@@ -26,21 +26,23 @@ const pageTitle = "About Us – Happy Homes";
           Placeholder for a future event calendar. Admins will be able to manage events here.
         </p>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div class="bg-orange-200 p-4 rounded shadow">
+          <a href="/images/tea-with-sisters.jpg" target="_blank" rel="noopener" aria-label="Tea with Sisters image" class="block bg-orange-200 p-4 rounded shadow hover:scale-[1.02] transition-transform">
             <h3 class="font-bold text-lg mb-1">Tea with Sisters</h3>
             <p class="text-sm">Every Wednesday • York Gardens Library</p>
             <p class="text-sm mt-2">Health and Wellbeing</p>
-          </div>
-          <div class="bg-orange-200 p-4 rounded shadow">
+          </a>
+
+          <a href="/images/Volleyball-Poster.jpg" target="_blank" rel="noopener" aria-label="Womens Volleyball image" class="block bg-orange-200 p-4 rounded shadow hover:scale-[1.02] transition-transform">
             <h3 class="font-bold text-lg mb-1">Womens Volleyball</h3>
             <p class="text-sm">Every Friday • Yvonne Carr Centre</p>
             <p class="text-sm mt-2">Email fozia@happyhomescommunity.org.uk for registration</p>
-          </div>
-          <div class="bg-orange-200 p-4 rounded shadow">
+          </a>
+
+          <a href="/images/badminton-poster.jpg" target="_blank" rel="noopener" aria-label="Womens Badminton image" class="block bg-orange-200 p-4 rounded shadow hover:scale-[1.02] transition-transform">
             <h3 class="font-bold text-lg mb-1">Womens Badminton</h3>
             <p class="text-sm">Every Monday & Wednesday • Yvonne Carr Centre</p>
             <p class="text-sm mt-2">Email fozia@happyhomescommunity.org.uk for registration</p>
-          </div>
+          </a>
         </div>
       </div>
     </section>

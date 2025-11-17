@@ -54,11 +54,11 @@ const slides = [
         <div class="w-screen flex-shrink-0 relative slide flex items-center justify-center bg-orange-50" role="group" aria-label={slide.alt} style="background-color: #fdba74;">
           <img src={slide.src} alt={slide.alt} class="w-full h-auto max-h-[70vh] object-contain z-0 mx-auto block" />
 
-          <!-- Centered caption panel over image -->
-          <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
-            <div class="text-black p-4 rounded-md backdrop-blur-sm max-w-xs md:max-w-2xl text-center pointer-events-auto" style="background-color: rgba(253,186,116,0.88);">
-              <h1 class="text-lg md:text-3xl font-bold mb-2">{slide.title}</h1>
-              <p class="text-sm md:text-base">{slide.description}</p>
+          <!-- Bottom-centered caption panel over image -->
+          <div class="absolute inset-x-0 bottom-6 flex items-end justify-center z-20 pointer-events-none">
+            <div class="text-black p-3 rounded-md backdrop-blur-sm max-w-xs md:max-w-2xl text-center pointer-events-auto mx-4" style="background-color: rgba(253,186,116,0.88);">
+              <h1 class="text-base md:text-2xl font-bold mb-1">{slide.title}</h1>
+              <p class="text-xs md:text-sm mb-0">{slide.description}</p>
             </div>
           </div>
         </div>

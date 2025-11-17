@@ -8,20 +8,20 @@ const pageTitle = "Happy Homes";
 // Local image slides for the carousel
 const slides = [
   {
+    src: '/images/civic-award-2025-group.JPG',
     alt: 'Welcome to Happy Homes',
-    image: '/images/civic-award-2025-group.JPG',
     title: 'Welcome to Happy Homes',
     description: 'Empowering families with care, support, and community connection.',
   },
   {
+    src: '/images/boardgames1.jpg',
     alt: 'Support That Matters',
-    image: '/images/boardgames1.jpg',
     title: 'Support That Matters',
     description: 'Workshops and safe spaces for growth.',
   },
   {
+    src: '/images/art-activ5.jpg',
     alt: 'Together We Rise',
-    image: '/images/art-activ5.jpg',
     title: 'Together We Rise',
     description: 'Advocating for resilient families.',
   },
@@ -44,21 +44,21 @@ const slides = [
 <!-- ✅ Fullscreen Hero Carousel with videos -->
  
 <section x-data="{ current: 0, slides: $el.querySelectorAll('.slide').length }" class="relative">
-  <div class="overflow-hidden relative h-screen w-full">
+  <!-- Full-bleed carousel (slides use viewport width) -->
+  <div class="overflow-hidden relative w-screen bg-orange-50" style="background-color: #fdba74;">
     <div
-      class="flex transition-transform duration-700 ease-in-out w-full h-full"
-      :style="`transform: translateX(-${current * 100}%);`"
+      class="flex transition-transform duration-700 ease-in-out"
+      :style="`transform: translateX(-${current * 100}%); width: ${slides.length * 100}vw;`"
     >
       {slides.map((slide, index) => (
-        <div
-          class="w-full h-full flex-shrink-0 relative slide"
-          style={`background-image: url('${slide.image}'); background-size: cover; background-position: center;`}
-          aria-label={slide.alt}
-        >
-          <div class="carousel-item absolute inset-0 flex items-center justify-center text-white px-4 text-center bg-black bg-opacity-30">
-            <div>
-              <h1 class="text-4xl font-bold mb-2">{slide.title}</h1>
-              <p class="text-blue text-lg">{slide.description}</p>
+        <div class="w-screen flex-shrink-0 relative slide flex items-center justify-center bg-orange-50" role="group" aria-label={slide.alt} style="background-color: #fdba74;">
+          <img src={slide.src} alt={slide.alt} class="w-full h-auto max-h-[70vh] object-contain z-0 mx-auto block" />
+
+          <!-- Centered caption panel over image -->
+          <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
+            <div class="text-black p-4 rounded-md backdrop-blur-sm max-w-xs md:max-w-2xl text-center pointer-events-auto" style="background-color: rgba(253,186,116,0.88);">
+              <h1 class="text-lg md:text-3xl font-bold mb-2">{slide.title}</h1>
+              <p class="text-sm md:text-base">{slide.description}</p>
             </div>
           </div>
         </div>
@@ -92,8 +92,8 @@ const slides = [
 
 
     <!-- ✅ Mission Section -->
-    <section class="pb-4 pt-12">
-      <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+    <section class="pb-4 pt-12 bg-orange-50" style="background-color: #fdba74;">
+      <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center bg-transparent" style="background-color: #fdba74;">
         <div>
           <h2 class="text-2xl font-semibold mb-4">Our Mission</h2>
           <p class="text-gray-700 mb-4">
@@ -106,7 +106,7 @@ const slides = [
             adversity. We aim to do this through workshops and forums raising awareness about socioeconomic challenges and local services available to tackle them.    
           </p>
         </div>
-        <img src="/images/kids-activ7.jpg" alt="Families helping each other" class="rounded-xl shadow" />
+        <img src="/images/kids-activ7.jpg" alt="Families helping each other" class="rounded-xl shadow block bg-transparent" />
       </div>
     </section>
 

@@ -9,81 +9,19 @@ const pageTitle = "Happy Homes";
 const slides = [
   {
     alt: 'Welcome to Happy Homes',
+    image: '/images/civic-award-2025-group.JPG',
     title: 'Welcome to Happy Homes',
     description: 'Empowering families with care, support, and community connection.',
   },
   {
     alt: 'Support That Matters',
+    image: '/images/boardgames1.jpg',
     title: 'Support That Matters',
     description: 'Workshops and safe spaces for growth.',
   },
   {
     alt: 'Together We Rise',
-    title: 'Together We Rise',
-    description: 'Advocating for resilient families.',
-  },
-    {
-    alt: 'Welcome to Happy Homes',
-    title: 'Welcome to Happy Homes',
-    description: 'Empowering families with care, support, and community connection.',
-  },
-  {
-    alt: 'Support That Matters',
-    title: 'Support That Matters',
-    description: 'Workshops and safe spaces for growth.',
-  },
-  {
-    alt: 'Together We Rise',
-    title: 'Together We Rise',
-    description: 'Advocating for resilient families.',
-  },
-    {
-    alt: 'Welcome to Happy Homes',
-    title: 'Welcome to Happy Homes',
-    description: 'Empowering families with care, support, and community connection.',
-  },
-  {
-    alt: 'Support That Matters',
-    title: 'Support That Matters',
-    description: 'Workshops and safe spaces for growth.',
-  },
-  {
-    alt: 'Together We Rise',
-    title: 'Together We Rise',
-    description: 'Advocating for resilient families.',
-  },
-    {
-    alt: 'Welcome to Happy Homes',
-    title: 'Welcome to Happy Homes',
-    description: 'Empowering families with care, support, and community connection.',
-  },
-  {
-    alt: 'Support That Matters',
-    title: 'Support That Matters',
-    description: 'Workshops and safe spaces for growth.',
-  },
-  {
-    alt: 'Together We Rise',
-    title: 'Together We Rise',
-    description: 'Advocating for resilient families.',
-  },
-    {
-    alt: 'Welcome to Happy Homes',
-    title: 'Welcome to Happy Homes',
-    description: 'Empowering families with care, support, and community connection.',
-  },
-  {
-    alt: 'Support That Matters',
-    title: 'Support That Matters',
-    description: 'Workshops and safe spaces for growth.',
-  },
-  {
-    alt: 'Together We Rise',
-    title: 'Together We Rise',
-    description: 'Advocating for resilient families.',
-  },
-  {
-    alt: 'Together We Rise',
+    image: '/images/art-activ5.jpg',
     title: 'Together We Rise',
     description: 'Advocating for resilient families.',
   },
@@ -112,8 +50,9 @@ const slides = [
       :style="`transform: translateX(-${current * 100}%);`"
     >
       {slides.map((slide, index) => (
-        <div class="w-full h-full flex-shrink-0 relative slide" key={index}>
-          <div class="carousel-item absolute inset-0 flex items-center justify-center text-white px-4 text-center">
+        <div class="w-full h-full flex-shrink-0 relative slide">
+          <img src={slide.image} alt={slide.alt} class="absolute inset-0 w-full h-full object-cover" />
+          <div class="carousel-item absolute inset-0 flex items-center justify-center text-white px-4 text-center bg-black bg-opacity-30">
             <div>
               <h1 class="text-4xl font-bold mb-2">{slide.title}</h1>
               <p class="text-blue text-lg">{slide.description}</p>
@@ -184,7 +123,7 @@ const slides = [
             <p>Safe, welcoming spaces for families to connect, share, and grow together.</p>
           </div>
           <div class="bg-orange-300 p-6 rounded shadow">
-            <img src="/images/mayor.jpg" alt="Community Advocacy" class="mb-4 rounded h-72 w-full object-cove" />
+            <img src="/images/civic-awards-Fozia.JPG" alt="Community Advocacy" class="mb-4 rounded h-72 w-full object-cove" />
             <h3 class="font-bold mb-2">Community Advocacy</h3>
             <p>We champion better resources and policies for families in need, amplifying their voices in the community.</p>
           </div>
